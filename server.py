@@ -6,5 +6,11 @@ app = Flask(__name__)
 def endpoint():
     return "You've reached the server"
 
-if __name__ == '__main__':
+def serve_over_http():
+    app.run()
+
+def serve_over_https():
     app.run(ssl_context=('server.crt', 'server.key'))
+
+if __name__ == '__main__':
+    serve_over_https()
